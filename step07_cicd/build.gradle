@@ -1,7 +1,7 @@
 plugins {
 	id 'java'
-	id 'org.springframework.boot' version '3.4.4'
-	id 'io.spring.dependency-management' version '1.1.7'
+	id 'org.springframework.boot' version '3.2.5'  // ✔️ 안정 버전으로 변경
+	id 'io.spring.dependency-management' version '1.1.4'  // ✔️ 최신 안정 버전
 }
 
 group = 'edu.fisa.ce'
@@ -20,19 +20,26 @@ configurations {
 }
 
 repositories {
-	mavenCentral()
+	mavenCentral()  // ✔️ 꼭 있어야 함!
 }
 
 dependencies {
+	// Spring Boot
 	implementation 'org.springframework.boot:spring-boot-starter-web'
 	implementation 'org.springframework.boot:spring-boot-starter-actuator'
+
+	// Micrometer
 	implementation 'io.micrometer:micrometer-core'
 	implementation 'io.micrometer:micrometer-registry-prometheus'
 
+	// Lombok
 	compileOnly 'org.projectlombok:lombok'
 	annotationProcessor 'org.projectlombok:lombok'
 
+	// Devtools
 	developmentOnly 'org.springframework.boot:spring-boot-devtools'
+
+	// Test
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 	testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
 }
