@@ -10,7 +10,7 @@ public class Step07CicdApplicationTests {
 	
  @Test  
  public void testAddition() {
-     int result = 2 + 3;
+     int result = 12 + 3;
      
      /*
       * 예시 - 서버 시작시에 특정 DataBase 로부터 검색
